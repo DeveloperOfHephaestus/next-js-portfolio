@@ -1,0 +1,372 @@
+/*------------------ three-spliter-------------------- */
+.three_spliter {
+  display: flex !important;
+  flex-direction: row !important;
+  border-radius: 8px;
+}
+
+.three_spliter_img_left {
+  object-fit: contain !important;
+  border-radius: 1rem !important;
+  @media screen and (max-width: 576px) {
+    width: 100% !important;
+  }
+
+  transform: rotate(-10deg) translate(20%, 5%);
+}
+.three_spliter_img_mid {
+  border-radius: 1rem !important;
+  object-fit: contain !important;
+  @media screen and (max-width: 576px) {
+    width: 100% !important;
+  }
+}
+.three_spliter_img_right {
+  object-fit: contain !important;
+  border-radius: 1rem !important;
+  @media screen and (max-width: 576px) {
+    width: 100% !important;
+  }
+
+  transform: rotate(10deg) translate(-20%, 5%);
+}
+
+@media screen and (max-width: 900px) {
+  .three_spliter_img_left,
+  .three_spliter_img_mid,
+  .three_spliter_img_right {
+    height: 250px !important;
+  }
+  .three_spliter_img_left {
+    transform: rotate(-10deg) translateX(50%);
+  }
+  .three_spliter_img_right {
+    transform: rotate(10deg) translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .three_spliter_img_left,
+  .three_spliter_img_mid,
+  .three_spliter_img_right {
+    height: 200px !important;
+  }
+  .three_spliter_img_left {
+    transform: rotate(-5deg) translateX(40%);
+  }
+  .three_spliter_img_right {
+    transform: rotate(5deg) translateX(-40%);
+  }
+}
+/* --------------------------------------------------- */
+
+.collection {
+  position: relative !important;
+  /* display: flex;
+  justify-content: center !important; */
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  @media screen and (max-width: 576px) {
+    justify-content: start !important;
+  }
+}
+.collection_child {
+  position: absolute !important;
+  height: 100% !important;
+  width: 60% !important;
+  transition: 0.5s linear all !important;
+  @media screen and (max-width: 576px) {
+    position: static !important;
+    width: 100% !important;
+  }
+}
+.collection_child:hover {
+  transform: scale(1.02, 1.02);
+  z-index: 10 !important;
+}
+/* --------------------Standard-faq------------------------ */
+
+.standard_faq {
+  background: transparent !important;
+  color: black !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom-color: black;
+
+  position: relative;
+  border-radius: 0 !important;
+  z-index: 3;
+}
+
+.faq_standard_card {
+  height: 100% !important;
+  background: linear-gradient(
+    rgba(47, 159, 142, 1),
+    rgb(16, 37, 35)
+  ) !important;
+  border: none;
+  color: white !important;
+  @media screen and (max-width: 576px) {
+    display: none !important;
+  }
+}
+.faq_collapse {
+  @media screen and (min-width: 576px) {
+    display: none !important;
+  }
+}
+/* -------------------------------------------------------- */
+
+/* ----------------mobile-simulator------------------------- */
+.mobile_app_simulator {
+  position: relative;
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: start;
+  padding-top: 41px;
+  background: url("./mobile-screen.png");
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+}
+
+.mobile_app_simulator_app_content {
+  width: 70%;
+}
+
+/* simulator-custom-styles */
+
+/* these can be changed for different apps */
+.mobile_app_simulator_app_content input,
+.mobile_app_simulator_app_content .input {
+  border-radius: 8px !important;
+  background: rgba(186, 224, 213, 1) !important;
+  border: 1px solid rgba(124, 197, 188, 1) !important;
+}
+
+/* ----------------------- */
+
+/* simulator font-size */
+.mobile_app_simulator_app_content p {
+  font-size: 12px !important;
+}
+.mobile_app_simulator_app_content small {
+  font-size: 7px !important;
+}
+.mobile_app_simulator_app_content input,
+.mobile_app_simulator_app_content label {
+  font-size: 10px !important;
+}
+
+/* ------------------- */
+
+/* simulator responsiveness */
+@media screen and (max-width: 768px) {
+  .mobile_app_simulator_app_content img {
+    max-height: 200px !important;
+  }
+  .mobile_app_simulator_app_content button {
+    font-size: 10px !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mobile_app_simulator_app_content {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 360px) {
+  .mobile_app_simulator_app_content {
+    width: 83%;
+  }
+}
+/* ---------------------------- */
+
+/* --------------------------------------------------------- */
+
+/* ----------Guider----------------------------- */
+.guider {
+  position: fixed;
+  bottom: 2%;
+  left: 0;
+  z-index: 10;
+  transition: 0.4s linear all;
+  animation: up-down-animation 3s linear infinite;
+  @media (max-width: 768px) {
+    bottom: 0;
+  }
+  @media (max-width: 576px) {
+    bottom: 10%;
+  }
+}
+.guider img {
+  height: 250px;
+  width: 80px;
+  filter: drop-shadow(0 0 2px rgb(23, 25, 26));
+  @media (max-width: 576px) {
+    height: 100px;
+  }
+}
+@keyframes up-down-animation {
+  50% {
+    transform: translateY(-10%);
+  }
+}
+/* --------------------------------------------- */
+
+/* --------------------------------------------------- */
+
+.collection {
+  position: relative !important;
+  /* display: flex;
+  justify-content: center !important; */
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  @media screen and (max-width: 576px) {
+    justify-content: start !important;
+  }
+}
+.collection_child {
+  position: absolute !important;
+  height: 100% !important;
+  width: 60% !important;
+  transition: 0.5s linear all !important;
+  @media screen and (max-width: 576px) {
+    position: static !important;
+    width: 100% !important;
+  }
+}
+.collection_child:hover {
+  transform: scale(1.02, 1.02);
+  z-index: 10 !important;
+}
+/* --------------------Standard-faq------------------------ */
+
+.standard_faq {
+  background: transparent !important;
+  color: black !important;
+  cursor: pointer !important;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-bottom-color: black;
+
+  position: relative;
+  border-radius: 0 !important;
+  z-index: 3;
+}
+
+.faq_standard_card {
+  height: 100% !important;
+  background: linear-gradient(
+    rgba(47, 159, 142, 1),
+    rgb(16, 37, 35)
+  ) !important;
+  border: none;
+  color: white !important;
+  @media screen and (max-width: 576px) {
+    display: none !important;
+  }
+}
+.faq_collapse {
+  @media screen and (min-width: 576px) {
+    display: none !important;
+  }
+}
+/* -------------------------------------------------------- */
+
+/* ------circle-layout--------------------- */
+.circle_layout {
+  position: relative;
+  border-radius: 50%;
+}
+
+.item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Example text color */
+}
+/* --------------------------------------- */
+
+/*--------------------steps--------------- */
+.steps_container {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.step_card,
+.step_card_active {
+  display: flex;
+  background: transparent !important;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+  justify-content: start !important;
+  gap: 14px !important;
+  padding: 1rem !important;
+  border: none !important;
+  position: relative;
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 50%;
+    flex-wrap: nowrap !important;
+  }
+}
+.step_card::before {
+  height: 30px;
+  width: 30px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  background: linear-gradient(white, whitesmoke);
+  color: black;
+  content: attr(step);
+  position: absolute;
+  left: -15px;
+}
+.step_card_active::before {
+  height: 30px;
+  width: 30px;
+  padding: 0.5rem;
+  border-radius: 50%;
+  font-weight: 800;
+  background: linear-gradient(rgb(2, 96, 84), rgb(2, 50, 44));
+  color: rgb(243, 239, 239);
+  content: attr(step);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: -15px;
+}
+/* -------------------------------------- */
+
+/*-----------square-layout--------------- */
+.square_layout_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.square_layout_box {
+  border: 2px dashed #feffff9e !important;
+  @media (max-width: 576px) {
+    border: none !important;
+  }
+}
+.square_layout_item {
+  --transformX: var(--transformX);
+  display: flex;
+  justify-content: center !important;
+  --transformY: var(--transformY);
+  transform: translate(var(--transformX), var(--transformY));
+  @media (max-width: 576px) {
+    width: 100% !important;
+    transform: translate(0, 0) !important;
+  }
+}
+/* -------------------------------------- */
