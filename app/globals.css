@@ -115,24 +115,27 @@ main {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #068AF5;
+  color: #068af5;
   font-weight: 600;
   padding: 0.5rem !important;
   position: relative;
   transition: 0.3s linear all;
 }
 .bottom-bar-link:hover::after {
-width: 100%;
-height: 2px ;
-bottom: 0;
-background: rgb(2, 111, 174) ;
-content:'';
-left: 0;
-position: absolute;
-animation: expand-anim 0.3s linear 1 ;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  background: rgb(2, 111, 174);
+  content: "";
+  left: 0;
+  position: absolute;
+  animation: expand-anim 0.3s linear 1;
 }
 @keyframes expand-anim {
-  from{width: 0;left: 50%;}
+  from {
+    width: 0;
+    left: 50%;
+  }
 }
 .bottom-bar-link .title {
   @media (max-width: 576px) {
@@ -341,6 +344,43 @@ animation: expand-anim 0.3s linear 1 ;
 .achievement-card:hover {
   text-decoration: underline rgb(31, 30, 29) !important;
   box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.603) !important;
+}
+
+.form {
+  background: linear-gradient(#0166b9, #034982);
+  padding: 1rem;
+  border-radius: 18px;
+}
+.loading {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+}
+
+
+
+
+.loading {
+  width: 100px;
+  aspect-ratio: 1;
+  --c: no-repeat linear-gradient(#f9f7f7 0 0);
+  background: 
+    var(--c) 0%   100%,
+    var(--c) 50%  100%,
+    var(--c) 100% 100%;
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {
+  0%  {background-size: 20% 100%,20% 100%,20% 100%}
+  20% {background-size: 20% 60% ,20% 100%,20% 100%}
+  40% {background-size: 20% 80% ,20% 60% ,20% 100%}
+  60% {background-size: 20% 100%,20% 80% ,20% 60% }
+  80% {background-size: 20% 100%,20% 100%,20% 80% }
+  100%{background-size: 20% 100%,20% 100%,20% 100%}
 }
 
 /* --------------- */

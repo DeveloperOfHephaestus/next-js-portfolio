@@ -13,8 +13,11 @@ import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 import Link from "next/link";
 import { navbarLinks } from "@/dummyData";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
+import Image from "next/image";
 
 const Header = () => {
+  const user = useSelector((s) => s?.user ?? {});
   const [isExpanded, setisExpanded] = useState(false);
   const pathName = usePathname();
   return (
@@ -57,6 +60,33 @@ const Header = () => {
             </NavLink>
           </NavItem>
         ))}
+        {user?.uid ? (
+          <div className=" mx-3">
+            <div className="d-flex align-items-center gap-2">
+              <img
+                src={user?.profilePhoto}
+                height={30}
+                alt="user-avatar"
+                width={30}
+                className="avatar"
+              />
+              <small className="f-5">{user?.name}</small>
+            </div>
+          </div>
+        ) : (
+          <NavItem className="full-width">
+            <NavLink tag={"div"}>
+              <Link
+                href={"/login"}
+                className={`header-link ${
+                  pathName === "/login" ? "active" : ""
+                }`}
+              >
+                Login
+              </Link>
+            </NavLink>
+          </NavItem>
+        )}
       </Nav>
     </Navbar>
   );
