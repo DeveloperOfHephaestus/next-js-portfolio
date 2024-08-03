@@ -1,0 +1,230 @@
+.quick_nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px;
+  border-radius: 8px;
+}
+.quick_nav_item {
+  color: rgb(124, 124, 124) !important;
+  padding: 0.3rem;
+}
+.quick_nav_item_active {
+  color: black !important;
+  position: relative;
+  padding: 0.3rem;
+}
+.quick_nav_item_active::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: black;
+  content: "";
+}
+.scrollable_container_body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 0.5rem !important;
+  transition: 0.3s linear all !important;
+  position: relative;
+  padding: 1rem 0.5rem !important;
+  /*   
+ 
+  @media screen and (min-width:1024px) {
+   padding: 1rem !important;   
+  }
+  @media screen and (max-width:576px) {
+    padding: 0.5rem !important;
+    
+  } */
+}
+
+.scrollable_container_body::-webkit-scrollbar {
+  width: 5px !important;
+}
+
+.scrollable_container_body::-webkit-scrollbar-track {
+  border-top-left-radius: 1rem !important;
+  border-bottom-left-radius: 1rem !important;
+}
+.scrollable_container_body::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(63, 72, 72), rgb(45, 44, 44)) !important;
+  border-radius: 1rem !important;
+}
+
+.scrollable_container {
+  background: rgb(214, 213, 213) !important;
+  border-radius: 0.5rem !important;
+  transition: 0.3s linear all !important;
+  padding: 0 !important;
+  color: black !important;
+}
+.scrollable_container_header {
+  display: flex;
+  background: white !important;
+  justify-content: space-between !important;
+  align-items: center;
+  color: black !important;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+
+  @media screen and (max-width: 576px) {
+    flex-wrap: wrap !important;
+  }
+}
+.scrollable_div {
+  border-radius: 0.5rem !important;
+  padding: 0.5rem !important;
+}
+.scrollable_div_body {
+  height: 400px;
+  overflow-y: scroll;
+  background: rgb(235, 235, 235) !important;
+  border-radius: 0.5rem !important;
+
+  @media screen and (min-width: 768px) {
+    padding: 1rem !important;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 0.5rem !important;
+  }
+}
+.scrollable_div_body::-webkit-scrollbar {
+  width: 7px !important;
+}
+.scrollable_div_body::-webkit-scrollbar-thumb {
+  background: linear-gradient(purple, darkblue);
+  border-radius: 0.5rem !important;
+}
+.scrollable_div_body::-webkit-scrollbar-track {
+  background: rgb(254, 254, 254) !important;
+  border-radius: 0.5rem !important;
+}
+.navigator_tab {
+  display: flex;
+  align-items: end;
+  gap: 14px !important;
+  padding: 0 !important;
+  background: white !important;
+  border-bottom: 1px solid rgba(228, 230, 232, 1) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
+  @media screen and (max-width: 576px) {
+    gap: 0.5rem !important;
+  }
+}
+.navigator_tab_item {
+  background: transparent !important;
+  color: rgb(133, 132, 132) !important;
+  border-color: transparent !important ;
+  position: relative;
+   font-weight: 600 !important;
+  transition: 0.3s linear all !important;
+}
+.navigator_tab_item_active {
+  color: rgb(255, 255, 255) !important;
+  background: linear-gradient(rgb(10, 41, 72),rgb(0,0,0)) !important;
+}
+
+@keyframes grow {
+  from {
+    width: 0;
+    left: 50%;
+  }
+}
+.paginate_item_active {
+  background: linear-gradient(#4a4a4b, black) !important;
+  color: rgb(255, 255, 255) !important;
+  text-decoration: none;
+  width: 30px !important;
+  border-radius: 0.3rem !important;
+}
+.pagination {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center !important;
+  width: 100% !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+  @media screen and (max-width: 576px) {
+    gap: 10px !important;
+  }
+}
+.paginate_item {
+  width: 30px !important;
+  margin-left: 14px;
+  margin-right: 14px;
+  border-radius: 0.5rem !important;
+  background: linear-gradient(rgb(255, 255, 255), rgb(225, 231, 241));
+  border-radius: 0.3rem !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  display: flex;
+  justify-content: center;
+  @media screen and (max-width: 576px) {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+.paginate_item a {
+  width: 100% !important;
+  padding: 0 !important ;
+  margin: 0 !important;
+  text-align: center !important;
+}
+.paginate_next_prev_btns {
+  text-decoration: none !important;
+  color: rgb(0, 0, 0) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+}
+
+.search_bar {
+  display: flex !important;
+  align-items: center !important;
+  background: #ffffff !important;
+  border-radius: 0.5rem !important;
+  padding-left: 13px !important;
+  border-radius: 50px !important;
+}
+
+.search_bar input:focus,.search_bar input:focus-visible{
+outline: none !important;
+box-shadow: none !important;
+border-color: transparent !important;
+}
+
+/* status-bage */
+.status_badge {
+  border-radius: 28.55px !important;
+  padding: 0.5rem !important;
+  width: 96px !important;
+  font-weight: 500 !important;
+  background-color: transparent !important;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    font-size: 10px !important;
+    width: auto !important;
+  }
+}
+.completed_status {
+  background-color: rgba(1, 163, 37, 0.07) !important;
+  color: rgb(1, 163, 37) !important;
+}
+.pending_status {
+  background-color: rgba(204, 163, 0, 0.07) !important;
+  color: rgb(204, 163, 0) !important;
+}
+.in_progress_status {
+  background-color: rgba(42, 139, 242, 0.07) !important;
+  color: rgb(42, 139, 242) !important;
+}
+/* ---------- */
+
+
+/* ------------------ */

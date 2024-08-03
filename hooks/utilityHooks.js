@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteData, saveData, uploadImage } from "../backend/utility";
 import { toast } from "react-toastify";
-import { allUsers } from "../redux/action";
-import SearchBar from "../components/specials/SearchBar";
-import NavigatorTab from "../components/specials/NavigatorTab";
-import PaginationControls from "../components/specials/PaginationControls";
+import NavigatorTab from "@/ui/specials/NavigatorTab";
+import PaginationControls from "@/ui/specials/PaginationControls";
 
 /**pagination hook use with PaginationControls Component */
 export const usePagination = (items, itemsPerPage) => {

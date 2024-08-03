@@ -8,3 +8,6 @@ export const userLogin = (payload) => {
 export const allProjects = (payload) => {
   return { type: "ALLPROJECTS", payload: payload };
 };
+export const allUserChats=(payload)=>{
+  return {type:'ALLUSERCHATS',payload:payload}
+}

@@ -3,14 +3,65 @@ import developerImage from "@/public/developer.png";
 import Image from "next/image";
 import { socialLinks } from "@/dummyData";
 import SpecialLink from "../specials/SpecialLink";
-import Particles from "../specials/Particles";
-
+import ThreejsRenderer from "../React-three-fiber/ThreejsRenderer";
+import Box from "../React-three-fiber/Box";
+import { randFloat } from "three/src/math/MathUtils";
+import Group from "../React-three-fiber/Group";
+import Banner3DModal from "../React-three-fiber/Banner3DModal";
+import { Suspense } from "react";
+import WaveBg from "../React-three-fiber/WaveBg";
 
 const HeroSection = () => {
-  
   return (
-    <div className="page-section position-relative " style={{overflow:"hidden"}}>
-   <Particles/>
+    <div
+      className="page-section position-relative "
+      style={{ overflow: "hidden" }}
+    >
+      {/* three js content */}
+      <ThreejsRenderer>
+        <directionalLight intensity={3} color={"white"} />
+        <directionalLight intensity={4} position={[0, 0, 5]} />
+        <directionalLight intensity={5} position={[-3, 5, 0]} />
+
+        <WaveBg />
+        <Suspense
+          fallback={
+            <mesh>
+              <boxGeometry />
+              <meshBasicMaterial color={"red"} />
+            </mesh>
+          }
+        >
+          <Banner3DModal position={[2, -3, 0]} />
+        </Suspense>
+        <Group position={[2, 0, 0]} smallerDevicePosition={[0, -2, 0]}>
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./next-js-logo.png"}
+          />
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./firebase-logo.png"}
+          />
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./bootstrap-logo.png"}
+          />
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./three-js-logo.png"}
+          />
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./redux-logo.png"}
+          />
+          <Box
+            position={[randFloat(-4, 4), 0, randFloat(-4, 4)]}
+            texturePath={"./react-logo.png"}
+          />
+        </Group>
+      </ThreejsRenderer>
+      {/* three js content */}
       <Container fluid>
         <Row className="g-2">
           <Col md={6} className="d-flex align-items-center">
@@ -30,30 +81,7 @@ const HeroSection = () => {
               </div>
             </div>
           </Col>
-          <Col md={6} className="position-relative">
-            <Image
-              style={{ animation: "up-and-down 5s linear infinite" }}
-              src={developerImage}
-              alt="next-dev-saif"
-              className="full-width object-fit-contain"
-              height={500}
-            />
-            <div
-              style={{ bottom: 0 }}
-              className="d-flex flex-wrap  justify-content-center position-absolute full-width  gap-3 align-items-center"
-            >
-              {socialLinks?.map((item, key) => (
-                <SpecialLink
-                  key={key}
-                  color={item?.color}
-                  description={item?.description}
-                  icon={item?.icon}
-                  link={item?.link}
-                  title={item?.title}
-                />
-              ))}
-            </div>
-          </Col>
+          <Col md={6} style={{ minHeight: "50vh" }}></Col>
         </Row>
       </Container>
     </div>

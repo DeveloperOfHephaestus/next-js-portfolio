@@ -65,9 +65,9 @@ const Header = () => {
             <div className="d-flex align-items-center gap-2">
               <img
                 src={user?.profilePhoto}
-                height={30}
+                height={40}
                 alt="user-avatar"
-                width={30}
+                width={40}
                 className="avatar"
               />
               <small className="f-5">{user?.name}</small>

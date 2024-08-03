@@ -11,6 +11,8 @@ import { useDispatch } from "react-redux";
 import { userLogin } from "@/redux/action";
 import { getDocByKeyValue } from "@/backend/utility";
 import { useRouter } from "next/navigation";
+import ProtectedRoute from "@/ui/HOC/ProtectedRoute";
+import { useAuthMiddleWare } from "@/middlewares";
 
 const page = () => {
   const navRouter = useRouter();
@@ -142,4 +144,9 @@ const page = () => {
   );
 };
 
-export default page;
+export default ProtectedRoute(
+  page,
+  useAuthMiddleWare,
+  "/",
+  "You are already logged in"
+);

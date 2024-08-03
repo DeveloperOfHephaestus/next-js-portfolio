@@ -1,5 +1,7 @@
 const initialValue = {
   allProjects: [],
+  allUserChats: [],
+  user: {},
 };
 
 const reducerData = (state = initialValue, action) => {
@@ -12,6 +14,9 @@ const reducerData = (state = initialValue, action) => {
     }
     case "ALLPROJECTS": {
       return { ...state, allProjects: action.payload };
+    }
+    case "ALLUSERCHATS": {
+      return { ...state, allUserChats: action.payload };
     }
     default:
       return state;
